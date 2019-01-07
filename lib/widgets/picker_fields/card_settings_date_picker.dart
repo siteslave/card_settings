@@ -7,6 +7,16 @@ import '../../card_settings.dart';
 
 /// This is the date picker field
 class CardSettingsDatePicker extends FormField<DateTime> {
+  
+  static String formatMonth(DateTime d) {
+    int year = d.year + 543;
+    DateFormat format = new DateFormat.MMM('th');
+    String m = format.format(d);
+    String thDate = '$m $year';
+
+    return thDate;
+  }
+  
   CardSettingsDatePicker({
     Key key,
     String label: 'Label',
@@ -42,7 +52,7 @@ class CardSettingsDatePicker extends FormField<DateTime> {
                   content: Text(
                     state.value == null
                         ? ''
-                        : DateFormat.yMd().format(state.value),
+                        : formatMonth(state.value),
                     style: Theme.of(field.context).textTheme.subhead,
                     textAlign: contentAlign ??
                         CardSettings.of(field.context).contentAlign,
