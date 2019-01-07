@@ -20,7 +20,7 @@ class CardSettingsInstructions extends StatelessWidget {
     TextStyle textStyle = Theme.of(context)
         .primaryTextTheme
         .caption
-        .copyWith(color: this.textColor);
+        .copyWith(color: this.textColor, fontSize: 15.0);
 
     return Container(
       margin: EdgeInsets.all(0.0),
