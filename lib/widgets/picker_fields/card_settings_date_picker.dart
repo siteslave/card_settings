@@ -10,7 +10,7 @@ class CardSettingsDatePicker extends FormField<DateTime> {
   
   static String formatMonth(DateTime d) {
     int year = d.year + 543;
-    DateFormat format = new DateFormat.MMM('th');
+    DateFormat format = new DateFormat.MMMd('th');
     String m = format.format(d);
     String thDate = '$m $year';
 
